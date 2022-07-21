@@ -1,0 +1,57 @@
+{
+  "Name": "vault",
+  "Repository": "https://github.com/xxyyx/vault.git",
+  "ContainerRepository": "docker.io",
+  "CanUseDocker": true,
+  "SudoDocker": true,
+  "Fuzzsettings": {
+    "FUZZ_TEST_RUN_TIME": 20,
+    "FUZZ_TEST_TIMEOUT": 15,
+    "FUZZ_NUM_PROCESSES": 1
+  },
+  "Gosettings": {
+    "GO111MODULE": "on",
+    "GOPROXY": "https://gomodules.cbhq.net/",
+    "GONOSUMDB": "github.cbhq.net",
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "GO_BIN": "/go/bin"
+  },
+  "Dependencysettings": {
+    "GOFUZZ_COMMIT": "b1f3d6f",
+    "GOFUZZ_BUILD_PKG": "github.com/dvyukov/go-fuzz/go-fuzz-build",
+    "GOFUZZ_BUILD_PKG_VERSION": "",
+    "GOFUZZ_PKG": "github.com/dvyukov/go-fuzz/go-fuzz",
+    "GOFUZZ_PKG_VERSION": "",
+    "GOFUZZ_DEP_PKG": "github.com/dvyukov/go-fuzz/go-fuzz-dep",
+    "GOFUZZ_DEP_PKG_VERSION": "",
+    "GOCYCLO_PKG": "",
+    "GOCYCLO_PKG_VERSION": ""
+  },
+  "Sourcesettings": {
+    "Commit": "f917917",
+    "Branch": "main",
+    "FuzzPackages": [
+      {
+        "FuncName": "Fuzz_parse",
+        "PackageName": "helper/parseip",
+        "BuildArchive": "/go/src/github.com/xxyyx/redwoods/fuzz/helper/parseip/parseip-Fuzz_parse.zip"
+      },
+      {
+        "FuncName": "Fuzz_parseip",
+        "PackageName": "helper/parseip",
+        "BuildArchive": "/go/src/github.com/xxyyx/redwoods/fuzz/helper/parseip/parseip-Fuzz_parseip.zip"
+      },
+      {
+        "FuncName": "Fuzz_xor",
+        "PackageName": "helper/xor",
+        "BuildArchive": "/go/src/github.com/xxyyx/redwoods/fuzz/helper/xor/xor-Fuzz_xor.zip"
+      },
+      {
+        "FuncName": "Fuzz_xor2",
+        "PackageName": "helper/xor",
+        "BuildArchive": "/go/src/github.com/xxyyx/redwoods/fuzz/helper/xor/xor-Fuzz_xor2.zip"
+      }
+    ]
+  }
+}
